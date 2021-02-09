@@ -43,6 +43,21 @@ function render(variables = {}) {
   if (variables.country == null) {
     variables.country = "Your country";
   }
+  if (variables.socialMediaPosition == null) {
+    variables.socialMediaPosition = "position-right";
+  }
+  if (variables.twitter == null) {
+    variables.twitter = "https://twitter.com/alesanchezr";
+  }
+  if (variables.github == null) {
+    variables.github = "https://github.com/alesanchezr";
+  }
+  if (variables.linkedin == null) {
+    variables.linkedin = "https://linkedin.com/alesanchezr";
+  }
+  if (variables.instagram == null) {
+    variables.instagram = "https://instagram.com/alesanchezr";
+  }
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -50,12 +65,12 @@ function render(variables = {}) {
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${variables.name} ${variables.lastname}</h1>
           <h2>${variables.role}</h2>
-          <h3>${variables.city}, ${varibles.country} </h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h3>${variables.city}, ${variables.country} </h3>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="${variables.twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="${variables.github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="${variables.linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="${variables.instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
